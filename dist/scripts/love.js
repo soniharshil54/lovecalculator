@@ -16,10 +16,8 @@
     })
     .then(res => {
       console.log("res")
-      console.log(res)
-      res.percentage = res.percentage + 20
-      if(res.percentage > 100){
-        res.percentage = res.percentage - 20
+      if(Number(res.percentage) < 80){
+        res.percentage = Number(res.percentage) + 20;
       }
       document.getElementById("resultlove").innerHTML = `${res.percentage}%`
       document.getElementById("resultloveres").innerHTML = res.result
